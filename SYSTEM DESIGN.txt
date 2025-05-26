@@ -1,0 +1,138 @@
+SYSTEM DESIGN or high level design 
+
+Lays a roadmap -> techstack, features, design the features 
+
+Documentation 
+
+
+TechStack -> NodeJS, Express, MongoDB, Mongoose, JWT, bCrypt	
+
+API Design
+
+Microservices -> small chunks of code that handle a certain feature 
+
+Microservices ->
+
+Products -> 
+Create product /createproduct
+Fetch Product /product
+Update Product /updateProduct
+Delete Product /deleteProduct
+Search /searchProduct
+
+User Authentication->
+Signup
+Login
+Logout
+Update Password
+Profile Page
+
+Cart Service ->
+Add to cart
+Delete From Cart
+Fetch Cart
+
+Orders ->
+Place Order
+Cancel Order
+Track
+
+Reviews ->
+Create Review
+Fetch Reviews on a product
+Delete a review 
+
+
+
+
+
+	SCHEMA
+
+PRODUCT->
+
+	id:string,
+	Name:string,
+description:string,
+Costprice:number,
+saleprice:number,
+Category:string,
+Stock:number,
+image:[String] -> cdn links front end 
+createdAt:date
+
+	USER->
+
+	Id:string,
+	Name:string,
+Age:number,
+Email:string,
+Address:string,
+Contact:number,
+Role:”user”, “admin”, -> role based authentication 
+Password:string
+
+
+
+CART->
+
+Id:string,
+userID:string,
+Products:[{
+productId: string,
+Price:number,
+quantity:number	
+}],
+totalAmount:number
+
+
+
+
+
+
+
+
+
+
+
+ORDER->
+
+Id:string,
+userID:string,
+Items:[{
+	productID:string,
+	Quantity:number,
+	Price:number
+}]
+	totalAmount:Number,
+	shippingAddress:String,
+	Status:string,
+
+
+
+
+	REVIEWS:
+	
+	Id:string,
+	productId:string,
+	Rating:number,
+	Userid:string,
+	Title:string,
+	Description:string,
+	Verifiedpurchase:boolean,
+	Votes:number,
+	Media:[string]
+
+
+	Components:
+	
+	express-> routing and security
+	Mongodb -> database
+	Mongoose-> data validation
+	Bcrypt-> password encryption
+	JWT-> authentication
+	nodemailer-> confirming the orders, tracking links etc 
+	nodemon-> dev env
+	dotenv-> securing our api keys
+
+	
+	
