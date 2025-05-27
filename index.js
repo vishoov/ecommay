@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const userRoutes = require('./view/user.routes');
+const productRoutes = require('./view/product.routes');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -12,6 +14,9 @@ mongoose.connect(process.env.MONGO)
 });
 
 
+app.use(express.json());
+app.use("/api/user", userRoutes);
+app.use("/api/product", productRoutes);
 
 
 app.get("/", (req, res)=>{
