@@ -3,6 +3,8 @@ const app = express();
 const mongoose = require('mongoose');
 const userRoutes = require('./view/user.routes');
 const productRoutes = require('./view/product.routes');
+const cartRoutes = require('./view/cart.routes');
+const orderRoutes = require('./view/order.routes');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -17,8 +19,8 @@ mongoose.connect(process.env.MONGO)
 app.use(express.json());
 app.use("/api/user", userRoutes);
 app.use("/api/product", productRoutes);
-
-
+app.use("/api/cart", cartRoutes);
+app.use("/api/order", orderRoutes)
 app.get("/", (req, res)=>{
     res.send("Welcome to our ecommerce API server");
 })

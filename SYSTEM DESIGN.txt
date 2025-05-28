@@ -136,3 +136,7 @@ Items:[{
 
 	
 	
+Cart -> 2 
+
+Offline -> browser -> add to cart -> localStorage -> sync localStorage.setItem('product', 'product-id')
+Synced -> database 
